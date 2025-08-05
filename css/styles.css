@@ -1,0 +1,250 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--basic-font-family);
+    font-size: var(--basic-font-size);
+    color: var(--main-color);
+    line-height: 1.3;
+}
+
+input {
+    font-family: var(--basic-font-family);
+    font-size: var(--basic-font-size);
+}
+
+input::placeholder {
+    font-family: var(--basic-font-family);
+    font-size: var(--basic-font-size);
+    color: var(--grey);
+}
+
+.container {
+    max-width: 1190px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.button {
+    font-family: var(--basic-font-family);
+    font-size: var(--basic-font-size);
+    line-height: 1.5;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    background-color: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.button.contained {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.button.outlined {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.clear-button {
+    font-size: var(--basic-font-size);
+    font-family: var(--basic-font-family);
+    background-color: transparent;
+    color: var(--grey);
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+}
+
+/* HEADER */
+.logo {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.header {
+    padding: 2rem 0;
+}
+
+.header__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+
+.menu__list {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-weight: 400;
+}
+
+.menu__list a {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+.menu__list a:hover {
+    color: var(--primary-color);
+
+}
+
+/* HERO */
+.hero {
+    padding: 5rem 0 3rem;
+}
+
+.hero h1 {
+    font-size: 96px;
+    font-weight: 500;
+}
+
+.hero h1+p {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-top: 2rem;
+    max-width: 780px;
+}
+
+/* SEARCH */
+.search {
+    padding-bottom: 3rem;
+}
+
+.form-element__input {
+    padding: 1rem;
+    border: 1px solid var(--main-color);
+    width: 100%;
+}
+
+.form-element__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.search-input {
+    padding-left: 3rem;
+}
+
+.search-input__wrapper {
+    position: relative;
+}
+
+.search-input__icon {
+    position: absolute;
+    top: 20px;
+    left: 16px;
+}
+
+/* CATEGORIES */
+.categories__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.categories__item {
+    background-color: transparent;
+    flex: 1;
+    font-size: 1.25rem;
+    padding: 2rem;
+    border: 1px solid var(--grey-10);
+    border-left: 0;
+    border-right: 0;
+}
+
+.categories__item.active {
+    border-color: var(--main-color);
+}
+
+/* PRODUCTS */
+.grid-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 3rem;
+}
+
+.grid-list>.product {
+    height: 100%;
+}
+
+.products__list {
+    transform: translateX(-50px);
+}
+
+.product__image-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.product__ladel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.75rem 1.125rem;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.product__ladel--sale {
+    color: var(--white-color);
+    background-color: var(--red);
+}
+
+.product__titel {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.product__delivery {
+    color: var(--grey);
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+}
+
+.product__price {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.product__current-price {
+    font-size: 2rem;
+    font-weight: 500;
+
+}
+
+.product__old-price {
+    font-size: 1.125rem;
+    text-decoration: line-through;
+}
+
+.product__discount {
+    font-size: 1.125rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-top: 0.5rem;
+}

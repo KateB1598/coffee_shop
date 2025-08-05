@@ -1,0 +1,14 @@
+:root {
+    --primary-color: #A27B5C;
+    --main-color: #121212;
+    --white-color: #FFFFFF;
+
+    --grey: #7F7F7F;
+    --grey-10: #E3E3E3;
+
+    --red: #F14C35;
+
+
+    --basic-font-size: 16px;
+    --basic-font-family: 'DMSans' 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
