@@ -1,5 +1,9 @@
 :root {
     --primary-color: #A27B5C;
+    --primary-hover: #6C523D;
+    --primary-pressed: #36291F;
+
+
     --main-color: #121212;
     --white-color: #FFFFFF;
 
@@ -10,5 +14,5 @@
 
 
     --basic-font-size: 16px;
-    --basic-font-family: 'DMSans' 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --basic-font-family: 'DMSans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
