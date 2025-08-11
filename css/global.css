@@ -105,7 +105,7 @@ img {
 .logo {
     text-decoration: none;
     color: var(--primary-color);
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 500;
 }
 
@@ -141,7 +141,7 @@ img {
 .menu__item--active::after {
     content: "";
     position: absolute;
-    width: 20px;
+    width: 1.25rem;
     height: 2px;
     background-color: var(--primary-color);
     bottom: -8px;
@@ -207,4 +207,67 @@ img {
     color: var(--primary-color);
     text-align: center;
     margin-top: 3rem;
+}
+
+/* CARD PRODUCT*/
+
+.card-products {
+    padding: 3rem 0 5rem;
+}
+
+.card-product__image-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.card-product__ladel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.75rem 1.125rem;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.card-product__ladel--sale {
+    color: var(--white-color);
+    background-color: var(--red);
+}
+
+.card-product__title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.card-product__delivery {
+    color: var(--grey);
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+}
+
+.card-product__price {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-product__current-price {
+    font-size: 2rem;
+    font-weight: 500;
+
+}
+
+.card-product__old-price {
+    font-size: 1.125rem;
+    text-decoration: line-through;
+}
+
+.card-product__discount {
+    font-size: 1.125rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-top: 0.5rem;
 }

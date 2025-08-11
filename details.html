@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/variables.css" type="text/css" />
     <link rel="stylesheet" href="./css/global.css" type="text/css" />
     <link rel="stylesheet" href="./css/details.css" type="text/css" />
-    <title>IMAJI Coffees | Details page</title>
+    <title>IMAJI Coffee | Details page</title>
 </head>
 
 <body>
@@ -49,30 +49,152 @@
     <main>
         <section class="product">
             <div class="container">
-                <div class="product__images"></div>
-                <div class="product__info">
-                    <ul class="breadcrumbs">
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li>
-                            <a href="#">Menu</a>
-                        </li>
-                        <li>
-                            Detail
-                        </li>
-                    </ul>
-                    <div class="product__main-info">
-                        <h1 class="product__title">At Home - Classic</h1>
-                        <div class="product__price-wrapper">
-                            <div class="product__price">
-                                <div class="product__current-price">$4.00</div>
-                                <div class="product__old-price">$5.00</div>
+                <div class="product__wrapper">
+                    <div class="product__images">
+                        <div class="product__side-images">
+                            <div>
+                                <img src="./images/slider-image-1.jpg" alt="Product 1">
                             </div>
-                            <p class="product__discount">Get 20% Off in App</p>
+                            <div>
+                                <img src="./images/slider-image-2.jpg" alt="Product 2">
+                            </div>
+                            <div>
+                                <img src="./images/slider-image-3.jpg" alt="Product 3">
+                            </div>
+                            <div>
+                                <img src="./images/slider-image-4.jpg" alt="Product 4">
+                            </div>
+                        </div>
+                        <div class="product__main-image">
+                            <img src="./images/details-main-image.jpg" alt="Main product">
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <ul class="breadcrumbs">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">Menu</a>
+                            </li>
+                            <li>
+                                Detail
+                            </li>
+                        </ul>
+                        <div class="product__main-info">
+                            <h1 class="product__title">At Home - Classic</h1>
+                            <div class="product__price-wrapper">
+                                <div class="product__price">
+                                    <div class="product__current-price">$4.00</div>
+                                    <div class="product__old-price">$5.00</div>
+                                </div>
+                                <p class="product__discount">Get 20% Off in App</p>
+                            </div>
+                        </div>
+                        <div class="product__description">
+                            <h6>Description:</h6>
+                            <p>
+                                An all-time favorite blend with citrus fruit character, caramel flavors, and a pleasant
+                                faintly floral aroma.
+                                Locked scent:
+                                Excelso prevents air from entering the packaging with a locked aroma, ensuring the
+                                coffee's
+                                freshness.
+
+                                Storage Way:
+                                To maintain the taste of coffee and the freshness of the aroma, store Excelso coffee in
+                                an
+                                airtight.
+                            </p>
+                        </div>
+                        <div class="product__buttons-wrapper">
+                            <button class="button outlined">Add to Cart</button>
+                            <div class="counter">
+                                <button>
+                                    <img src="./assets/icons/minus.svg" />
+                                </button>
+                                <span>1</span>
+                                <button>
+                                    <img src="./assets/icons/plus.svg" />
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section class="recommend-products">
+            <div class="container">
+                <h2>You May Also Like</h2>
+                <ul class="recommend-products__wrapper">
+                    <li class="card-product">
+                        <div class="card-product__image-wrapper">
+                            <div class="card-product__ladel card-product__ladel--sale">Sale</div>
+                            <picture>
+                                <img src="./images/Product Image_1 1x.jpg"
+                                    srcset="./images/Product Image_1 1x.jpg ./images/Product Image_1 2x.jpg 2x"
+                                    class="product__image">
+                            </picture>
+                        </div>
+                        <h5 class="card-product__title">AT HOME HOUSE BLEND</h5>
+                        <p class="card-product__delivery">Available Buy at Website</p>
+                        <div class="card-product__price">
+                            <div class="card-product__current-price">$5.00</div>
+                            <div class="card-product__old-price">$6.00</div>
+                        </div>
+                        <p class="card-product__discount">Get 20% Off in App</p>
+                    </li>
+                    <li class="card-product">
+                        <div class="card-product__image-wrapper">
+                            <div class="card-product__ladel card-product__ladel--sale">Sale</div>
+                            <picture>
+                                <img src="./images/Product Image_2 1x.jpg"
+                                    srcset="./images/Product Image_2 1x.jpg ./images/Product Image_2 2x.jpg 2x"
+                                    class="product__image">
+                            </picture>
+                        </div>
+                        <h5 class="card-product__title">AT HOME ARABICA</h5>
+                        <p class="card-product__delivery">Available Buy at Website</p>
+                        <div class="card-product__price">
+                            <div class="card-product__current-price">$5.00</div>
+                            <div class="card-product__old-price">$6.00</div>
+                        </div>
+                        <p class="card-product__discount">Get 20% Off in App</p>
+                    </li>
+                    <li class="card-product">
+                        <div class="card-product__image-wrapper">
+                            <div class="card-product__ladel card-product__ladel--sale">Sale</div>
+                            <picture>
+                                <img src="./images/Image_3 1x.jpg"
+                                    srcset="./images/Image_3 1x.jpg ./images/Image_3 2x.jpg 2x" class="product__image">
+                            </picture>
+                        </div>
+                        <h5 class="card-product__title">AT HOME LUWAK</h5>
+                        <p class="card-product__delivery">Available Buy at Website</p>
+                        <div class="card-product__price">
+                            <div class="card-product__current-price">$5.00</div>
+                            <div class="card-product__old-price">$6.00</div>
+                        </div>
+                        <p class="card-product__discount">Get 20% Off in App</p>
+                    </li>
+                    <li class="card-product">
+                        <div class="card-product__image-wrapper">
+                            <div class="card-product__ladel card-product__ladel--sale">Sale</div>
+                            <picture>
+                                <img src="./images/Product Image_4 1x.jpg"
+                                    srcset="./images/Product Image_4 1x.jpg ./images/Product Image_4 2x.jpg 2x"
+                                    class="product__image">
+                            </picture>
+                        </div>
+                        <h5 class="card-product__title">AT HOME LUWAK</h5>
+                        <p class="card-product__delivery">Available Buy at Website</p>
+                        <div class="card-product__price">
+                            <div class="card-product__current-price">$5.00</div>
+                            <div class="card-product__old-price">$6.00</div>
+                        </div>
+                        <p class="card-product__discount">Get 20% Off in App</p>
+                    </li>
+                </ul>
             </div>
         </section>
     </main>

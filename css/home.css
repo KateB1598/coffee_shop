@@ -4,15 +4,15 @@
 }
 
 .hero h1 {
-    font-size: 96px;
+    font-size: 6rem;
     font-weight: 500;
 }
 
 .hero h1+p {
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 1.4;
     margin-top: 2rem;
-    max-width: 780px;
+    max-width: 48.75rem;
 }
 
 /* SEARCH */
@@ -43,8 +43,8 @@
 
 .search-input__icon {
     position: absolute;
-    top: 20px;
-    left: 16px;
+    top: 1.25rem;
+    left: 1rem;
 }
 
 /* CATEGORIES */
@@ -73,71 +73,10 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 24px;
+    gap: 1.5rem;
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-.products {
-    padding: 3rem 0 5rem;
-}
-
-.product__image-wrapper {
-    position: relative;
-    margin-bottom: 1rem;
-}
-
-.product__ladel {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0.75rem 1.125rem;
-    font-size: 1.125rem;
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
-.product__ladel--sale {
-    color: var(--white-color);
-    background-color: var(--red);
-}
-
-.product__title {
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-.product__delivery {
-    color: var(--grey);
-    font-size: 1.125rem;
-    margin-bottom: 1rem;
-}
-
-.product__price {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.product__current-price {
-    font-size: 2rem;
-    font-weight: 500;
-
-}
-
-.product__old-price {
-    font-size: 1.125rem;
-    text-decoration: line-through;
-}
-
-.product__discount {
-    font-size: 1.125rem;
-    color: var(--primary-color);
-    font-weight: 500;
-    margin-top: 0.5rem;
 }
 
 .products__button-wrapper {
