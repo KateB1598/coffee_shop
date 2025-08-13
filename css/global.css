@@ -80,6 +80,9 @@ input::placeholder {
     opacity: 0.65;
 }
 
+.button.full-width {
+    width: 100%;
+}
 
 .clear-button {
     font-size: var(--basic-font-size);

@@ -12,7 +12,7 @@
     <title>IMAJI Coffee | Details page</title>
 </head>
 
-<body>
+<body style="overflow: hidden;">
     <header class="header">
         <div class="container">
             <div class="header__wrapper">
@@ -253,6 +253,103 @@
 
         </div>
     </footer>
+    <div class="sidebar">
+        <div class="sidebar__backdrop"></div>
+        <div class="sidebar__content">
+            <header class="sidebar__header">
+                <h1>My Cart</h1>
+                <button class="sidebar__close-btn">
+                    <img src="./assets/icons/times.svg" alt="">
+                </button>
+            </header>
+            <div class="sidebar__wrapper">
+                <div class="table">
+                    <div class="table__header">
+                        <div>Product</div>
+                        <div>Price</div>
+                        <div>Quantity</div>
+                        <div>Subtotal</div>
+                    </div>
+                    <ul>
+                        <li class="table__row">
+                            <div class="product-cell">
+                                <img src="./images/Cart-1.jpg" alt="">
+                                <div>
+                                    <h2 class="product-cell__title">At Home - Classic</h2>
+                                    <p class="product-cell__category">IMAJI Coffee At Home</p>
+                                </div>
+                            </div>
+                            <div class="price-cell">$4.00</div>
+                            <div class="quantity-cell">
+                                <div class="counter">
+                                    <button>
+                                        <img src="./assets/icons/minus.svg" />
+                                    </button>
+                                    <span>1</span>
+                                    <button>
+                                        <img src="./assets/icons/plus.svg" />
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="subtotal-cell">$4.00</div>
+                        </li>
+                        <li class="table__row">
+                            <div class="product-cell">
+                                <img src="./images/Cart-2.jpg" alt="">
+                                <div>
+                                    <h2 class="product-cell__title">At Home - Arabica</h2>
+                                    <p class="product-cell__category">IMAJI Coffee At Home</p>
+                                </div>
+                            </div>
+                            <div class="price-cell">$4.00</div>
+                            <div class="quantity-cell">
+                                <div class="counter">
+                                    <button>
+                                        <img src="./assets/icons/minus.svg" />
+                                    </button>
+                                    <span>1</span>
+                                    <button>
+                                        <img src="./assets/icons/plus.svg" />
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="subtotal-cell">$4.00</div>
+                        </li>
+                        <li class="table__row">
+                            <div class="product-cell">
+                                <img src="./images/Cart-3.jpg" alt="">
+                                <div>
+                                    <h2 class="product-cell__title">At Home - House Blend</h2>
+                                    <p class="product-cell__category">IMAJI Coffee At Home</p>
+                                </div>
+                            </div>
+                            <div class="price-cell">$4.00</div>
+                            <div class="quantity-cell">
+                                <div class="counter">
+                                    <button>
+                                        <img src="./assets/icons/minus.svg" />
+                                    </button>
+                                    <span>1</span>
+                                    <button>
+                                        <img src="./assets/icons/plus.svg" />
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="subtotal-cell">$4.00</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar__footer">
+                <h3 class="summary__title">Summary</h3>
+                <div class="summary__line">
+                    <div class="summary__subtitle">Total</div>
+                    <div class="summary__price">$14.00</div>
+                </div>
+                <button class="button contained full-width">Checkout</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
