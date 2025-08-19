@@ -1,8 +1,8 @@
 console.log(
   "JS #1. Домашнє завдання. Основи JavaScript: Працюємо зі змінними, типами даних"
 );
-let myNum = 10;
-let decimal2 = myNum.toFixed(2);
+const myNum = 10;
+const decimal2 = myNum.toFixed(2);
 console.log(decimal2);
 const myStr = "some string";
 console.log(myStr);
