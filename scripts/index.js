@@ -48,16 +48,20 @@ console.log(sumBigIntegers("9007199254740991", "9007199254740991"));
 
 console.log("#3. JavaScript homework example file");
 /* #1 i #2*/
+function greetByName({ firstName, lastName }) {
+  return `Hi, ${firstName} ${lastName}`;
+}
 const userObj = {
   firstName: "Kateryna",
   lastName: "Boiko",
   age: "27",
-  fullName: function () {
-    return this.firstName + " " + this.lastName;
+  fullName() {
+    return `${this.firstName} ${this.lastName}`;
   },
 };
 console.log(userObj);
 console.log(userObj.fullName());
+console.log(greetByName(userObj));
 
 /* #3 */
 function defUpperStr(str) {
@@ -196,3 +200,66 @@ console.log(mainFunc(2, 5, cbRandom));
 console.log(mainFunc(2, 5, cbPow));
 console.log(mainFunc(2, 5, cbAdd));
 console.log(mainFunc(2, 5, "not a func"));
+
+/* HW 21*/
+console.log("JS #4. Домашнє завдання. Принципи вищих функцій і замикань");
+
+/* ! Завдання: Реалізація Функції з Каруванням для Послідовного Додавання Трьох Чисел */
+function curriedAdd(a) {
+  return function (b) {
+    return function (c) {
+      return a + b + c;
+    };
+  };
+}
+
+curriedAdd(1)(2)(3);
+
+const addFirst = curriedAdd(1);
+const addSecond = addFirst(2);
+const result = addSecond(3);
+console.log("Result:", result);
+
+/* ! Завдання: Реалізація Функції з Каруванням для Побудови Повного Доменного Імені */
+
+function curriedDomain(protocol) {
+  return function (domainName) {
+    return function (tld) {
+      return `${protocol}://${domainName}.${tld}`;
+    };
+  };
+}
+
+const protocolSetter = curriedDomain("http");
+const domainNameSetter = protocolSetter("mywebsite");
+const fullDomain = domainNameSetter("org");
+console.log("Full Domain:", fullDomain);
+
+/* ! Завдання: Розробка Вищої Функції для Модифікації Поведінки Іншої Функції */
+
+function originalFunction(num) {
+  return num * num;
+}
+function modifyFunction(originalFunc, multiplier) {
+  return function (num) {
+    const originalResult = originalFunc(num);
+    return originalResult * multiplier;
+  };
+}
+const modifiedFunc = modifyFunction(originalFunction, 3);
+console.log("Original function output for 4:", originalFunction(4));
+console.log("Modified function output for 4:", modifiedFunc(4));
+
+/* ! Завдання: Розробка Функції Трирівневої Вкладеності в JavaScript з Конкретною Операцією */
+
+function outerFunction(arg1) {
+  function innerFunction(arg2) {
+    function deepInnerFunction(arg3) {
+      return arg1 * arg2 * arg3;
+    }
+    return deepInnerFunction;
+  }
+  return innerFunction;
+}
+const resultFunction = outerFunction(2)(3)(4);
+console.log(resultFunction);
