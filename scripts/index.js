@@ -362,3 +362,66 @@ const myTriple = myMul.bind(null, 3);
 console.log(myTriple(3));
 console.log(myTriple(4));
 console.log(myTriple(5));
+console.log("#6. JavaScript homework example file");
+/* 1 */
+
+class CalorieCalculator {
+  constructor() {
+    this.products = new Map();
+  }
+
+  addProduct(productName, calories) {
+    this.products.set(productName, calories);
+  }
+
+  getProductCalories(productName) {
+    if (this.products.has(productName)) {
+      return this.products.get(productName);
+    } else {
+      return "Product not found";
+    }
+  }
+
+  removeProduct(productName) {
+    if (this.products.has(productName)) {
+      this.products.delete(productName);
+    } else {
+      return "Product not found";
+    }
+  }
+}
+
+const calorieCalculator = new CalorieCalculator();
+calorieCalculator.addProduct("Apple", 52);
+calorieCalculator.addProduct("Banana", 89);
+
+console.log(calorieCalculator.getProductCalories("Apple"));
+console.log(calorieCalculator.getProductCalories("Banana"));
+
+calorieCalculator.removeProduct("Apple");
+console.log(calorieCalculator.getProductCalories("Apple"));
+
+/* 2 */
+class UniqueUsernames {
+  constructor() {
+    this.username = new Set();
+  }
+
+  addUser(username) {
+    this.username.add(username);
+  }
+
+  exists(username) {
+    return this.username.has(username);
+  }
+
+  count() {
+    return this.username.size;
+  }
+}
+const uniqueUsernames = new UniqueUsernames();
+uniqueUsernames.addUser("john_doe");
+uniqueUsernames.addUser("jane_doe");
+uniqueUsernames.addUser("john_doe");
+console.log(`Існує 'john_doe': ${uniqueUsernames.exists("john_doe")}`);
+console.log(`Кількість унікальних імен: ${uniqueUsernames.count()}`);
