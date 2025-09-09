@@ -362,6 +362,7 @@ const myTriple = myMul.bind(null, 3);
 console.log(myTriple(3));
 console.log(myTriple(4));
 console.log(myTriple(5));
+
 console.log("#6. JavaScript homework example file");
 /* 1 */
 
@@ -425,3 +426,61 @@ uniqueUsernames.addUser("jane_doe");
 uniqueUsernames.addUser("john_doe");
 console.log(`Існує 'john_doe': ${uniqueUsernames.exists("john_doe")}`);
 console.log(`Кількість унікальних імен: ${uniqueUsernames.count()}`);
+
+console.log(
+  "#7. JavaScript в дії: Обчислення, трансформація та управління даними"
+);
+/* 1 */
+function sumArray(numbers) {
+  return numbers.reduce((acc, num) => acc + num, 0);
+}
+const exampleArray = [1, 2, 3, 4, 5];
+const sum = sumArray(exampleArray);
+console.log("Сума елементів масиву:", sum);
+
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+console.log(reverseString("hello"));
+console.log(reverseString("JavaScript"));
+
+const factorial = (n) => {
+  if (n == 0) return 1;
+  return n * factorial(n - 1);
+};
+
+console.log(factorial(5));
+console.log(factorial(0));
+
+const getEvenNumbers = (arr) => arr.filter((n) => n % 2 === 0);
+
+console.log(getEvenNumbers([1, 2, 3, 4, 5, 6]));
+console.log(getEvenNumbers([11, 13, 15]));
+
+/* 2 */
+function doubleArraiElements(numbers) {
+  return (doubled = numbers.map((numbers) => numbers * 2));
+}
+const exampleArrai = [1, 2, 3, 4, 5];
+const doubledArrai = doubleArraiElements(exampleArrai);
+console.log("Подвоєні елементи масиву:", doubledArrai);
+/* 3 */
+class SkillsManager {
+  constructor() {
+    this.skills = [];
+  }
+  addSkill(skill) {
+    if (typeof skill === "string" && skill.trim().length >= 2) {
+      this.skills.push(skill.trim());
+      return skill.trim();
+    }
+    return null;
+  }
+  getAllSkills() {
+    return this.skills;
+  }
+}
+const skillsManager = new SkillsManager();
+console.log(skillsManager.addSkill("JavaScript"));
+console.log(skillsManager.addSkill("CSS"));
+console.log(skillsManager.getAllSkills());
