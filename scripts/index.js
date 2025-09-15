@@ -484,3 +484,74 @@ const skillsManager = new SkillsManager();
 console.log(skillsManager.addSkill("JavaScript"));
 console.log(skillsManager.addSkill("CSS"));
 console.log(skillsManager.getAllSkills());
+
+console.log("#8. JavaScript homework example file");
+/* 1 */
+
+function createDomElement(tagName, textContent, container) {
+  if (
+    typeof tagName !== "string" ||
+    typeof textContent !== "string" ||
+    !(container instanceof HTMLElement)
+  ) {
+    throw new Error("Invalid arguments");
+  }
+
+  const element = document.createElement(tagName);
+  element.textContent = textContent;
+  container.appendChild(element);
+  return element;
+}
+
+const container = document.body;
+const newParagraph = createDomElement(
+  "p",
+  "This paragraph has been added to the specified container.",
+  container
+);
+
+console.log(newParagraph);
+
+/* 2 */
+function setUserInfoCookie(key, value) {
+  if (typeof key !== "string" || typeof value !== "string") {
+    throw new Error("Key and value must be strings");
+  }
+  const encoded = encodeURIComponent(`${key}=${value}`);
+  const expires = new Date(Date.now() + 10 * 1000).toUTCString();
+  document.cookie = `userInfo=${encoded}; expires=${expires}; path=/`;
+
+  console.log(
+    `✅ Cookie "userInfo" збережено: ${key}=${value} (діє 10 секунд)`
+  );
+}
+
+setUserInfoCookie("language", "en");
+setUserInfoCookie("theme", "dark");
+
+/* 3 */
+function saveUserInfo(key, value) {
+  if (typeof key !== "string") {
+    throw new Error("Key must be a string");
+  }
+
+  sessionStorage.setItem(key, value);
+  console.log(`Saved ${key}: ${value}`);
+}
+
+function getUserInfo(key) {
+  if (typeof key !== "string") {
+    throw new Error("Key must be a string");
+  }
+  const value = sessionStorage.getItem(key);
+  console.log(`Retrieved ${key}: ${value}`);
+  return value;
+}
+saveUserInfo("username", "JohnDoe");
+saveUserInfo("language", "en");
+saveUserInfo("theme", "dark");
+
+console.log(getUserInfo("username"));
+console.log(getUserInfo("language"));
+console.log(getUserInfo("theme"));
+console.log(getUserInfo("unknown"));
