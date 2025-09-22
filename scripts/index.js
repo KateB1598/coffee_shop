@@ -531,19 +531,13 @@ setUserInfoCookie("theme", "dark");
 
 /* 3 */
 function saveUserInfo(key, value) {
-  if (typeof key !== "string") {
-    throw new Error("Key must be a string");
-  }
-
-  sessionStorage.setItem(key, value);
+  window.sessionStorage.setItem(key, value);
   console.log(`Saved ${key}: ${value}`);
+  return value;
 }
 
 function getUserInfo(key) {
-  if (typeof key !== "string") {
-    throw new Error("Key must be a string");
-  }
-  const value = sessionStorage.getItem(key);
+  const value = window.sessionStorage.getItem(key);
   console.log(`Retrieved ${key}: ${value}`);
   return value;
 }
