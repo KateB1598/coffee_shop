@@ -549,3 +549,20 @@ console.log(getUserInfo("username"));
 console.log(getUserInfo("language"));
 console.log(getUserInfo("theme"));
 console.log(getUserInfo("unknown"));
+
+// HW 30//
+//1*//
+function isValidEmail(email) {
+  const emailPattern = /^[\w.-]+@[\w.-]+\.[a-z]{2,}$/i;
+  return emailPattern.test(email);
+}
+console.log(isValidEmail("example@example.com"));
+console.log(isValidEmail("invalid-email"));
+
+//2*//
+function isValidUrl(url) {
+  const urlPattern = /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/[\w-./?%&=]*)?$/i;
+  return urlPattern.test(url);
+}
+console.log(isValidUrl("https://www.example.com"));
+console.log(isValidUrl("invalid-url"));
