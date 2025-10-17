@@ -1,26 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jasmine Tests</title>
-
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/jasmine-core@3.8.0/lib/jasmine-core/jasmine.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/jasmine-core@3.8.0/lib/jasmine-core/jasmine.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jasmine-core@3.8.0/lib/jasmine-core/jasmine-html.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jasmine-core@3.8.0/lib/jasmine-core/boot.js"></script>
-    <script src=""></script>
+    <title>CRUD операції - JSONPlaceholder</title>
+    <link rel="stylesheet" href="./css/styles.css" />
 </head>
 
 <body>
-    <script src="./scripts/main.js"></script>
+    <div class="container">
+        <div class="header">
+            <h1>Posts</h1>
+            <p>Керування постами через JSONPlaceholder API</p>
+        </div>
+        <div class="container">
+            <div class="section">
+                <h2>Створити пост</h2>
+                <form id="postForm">
+                    <div class="form-group">
+                        <label for="postId">ID (для оновлення)</label>
+                        <input type="number" id="postId" placeholder="Залиште пустий для нового" />
+                    </div>
+                    <div class="form-group">
+                        <label for="userId">User ID</label>
+                        <input type="number" id="userId" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Заголовок</label>
+                        <input type="text" id="title" required placeholder="Введіть заголовок" />
+                    </div>
+                    <div class="form-group">
+                        <label for="body">Текст</label>
+                        <textarea id="body" required placeholder="Введіть текст"></textarea>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit">Створити</button>
+                        <button type="button" class="secondary" id="updateFormButton">
+                            Оновити
+                        </button>
+                        <button type="button" class="secondary" id="clearFormButton">
+                            Очистити
+                        </button>
+                    </div>
+                </form>
+                <div id="formStatus"></div>
+            </div>
+            <div class="section">
+                <h2>Список постів</h2>
+                <button class="secondary" onclick="loadPosts">Оновити список</button>
+                <div id="postsContainer" class="posts-list"></div>
+            </div>
+        </div>
+    </div>
     <script src="./scripts/tests.js"></script>
-
 </body>
-
 
 </html>
