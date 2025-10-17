@@ -1,54 +1,216 @@
-describe("ageClassification", () => {
-  it("<0-0 повертає null", () => {
-    expect(ageClassification(-1)).toBe(null);
-    expect(ageClassification(0)).toBe(null);
-  });
-  it("1-24 повертає Дитинство", () => {
-    expect(ageClassification(1)).toBe("Дитинство");
-    expect(ageClassification(24)).toBe("Дитинство");
-  });
-  it("24-44 повертає Молодість", () => {
-    expect(ageClassification(24.1)).toBe("Молодість");
-    expect(ageClassification(44)).toBe("Молодість");
-  });
-  it("44-65 повертає Зрілість", () => {
-    expect(ageClassification(44.01)).toBe("Зрілість");
-    expect(ageClassification(65)).toBe("Зрілість");
-  });
-  it("65-75 повертає Старість", () => {
-    expect(ageClassification(65.1)).toBe("Старість");
-    expect(ageClassification(75)).toBe("Старість");
-  });
-  it("75-90 повертає Довголіття", () => {
-    expect(ageClassification(75.01)).toBe("Довголіття");
-    expect(ageClassification(90)).toBe("Довголіття");
-  });
-  it("90-122 повертає Рекорд", () => {
-    expect(ageClassification(90.01)).toBe("Рекорд");
-    expect(ageClassification(122)).toBe("Рекорд");
-  });
-  it("<122 повертає null", () => {
-    expect(ageClassification(122.01)).toBe(null);
-    expect(ageClassification(150)).toBe(null);
-  });
+// fetch("https://jsonplaceholder.typicode.com/posts")
+//   .then((res) => res.json())
+//   .then((data) => console.log(data));
+
+const API_URL = "https://jsonplaceholder.typicode.com/posts";
+
+const form = document.querySelector("#postForm");
+const clearFormButton = document.querySelector("#clearFormButton");
+const updateFormButton = document.querySelector("#updateFormButton");
+const postContainer = document.querySelector("#postsContainer");
+
+const createPost = async (postData = {}) => {
+  try {
+    const response = await fetch(API_URL, {
+      method: "POST",
+      body: JSON.stringify(postData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (!response.ok) {
+      throw new Error("Failed to create a user");
+    }
+    console.log("response", response);
+
+    const data = await response.json();
+    return data;
+  } catch (e) {
+    console.error(error);
+  }
+};
+
+createPost();
+
+const getAllPosts = async () => {
+  try {
+    const res = await fetch(`${API_URL}?_limit=10`);
+    const data = await res.json();
+    return data;
+  } catch (e) {
+    console(e);
+  }
+};
+
+const getPostById = async (id) => {
+  try {
+    const res = await fetch(`${API_URL}/${id}`);
+    const data = await res.json();
+    return data;
+  } catch (e) {
+    console;
+  }
+};
+
+const updatePost = async (id, postDate) => {
+  try {
+    const res = await fetch(`${API_URL}/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(postDate),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await res.json();
+    return;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+const deletePost = async (id) => {
+  try {
+    const res = await fetch(`${API_URL}/${id}`, {
+      method: "DELETE",
+    });
+    const data = await res.json();
+    return;
+  } catch (e) {
+    console.log(e);
+  }
+};
+const displayPosts = (posts) => {
+  if (posts.length === 0) {
+    postContainer.innerHTML = '<div class="loading">Posts not found</div>';
+    return;
+  }
+  const items = posts
+    .map((post) => {
+      return `
+    <div class="post-item">
+    <div class="meta">ID: ${post.id} | User: ${post.userId}</div>
+    <h3>${post.title}</h3>
+    <p>${post.body}</p>
+    <div>
+     <button class="secondary" data-action="edit" data-post-id="${post.id}">Edit</button>
+     <button class="destructive"  data-action="delete" data-post-id="${post.id}">Delete</button>
+    </div>
+    </div>
+    `;
+    })
+    .join("");
+  postContainer.innerHTML = items;
+};
+
+const loadPost = async () => {
+  postContainer.innerHTML = '<div class="loading">Loading...</div>';
+
+  try {
+    const posts = await getAllPosts();
+    displayPosts(posts.slice(0, 10));
+  } catch (e) {
+    postContainer.innerHTML =
+      '<div class="status error">Failed to fetch posts</div>';
+  }
+};
+
+const clearForm = () => {
+  form.reset();
+};
+
+const handleDelete = async (id) => {
+  if (!confirm("Delete post ?")) {
+    return;
+  }
+  try {
+    await deletePost(id);
+    loadPost();
+  } catch (e) {
+    console.error(e);
+  }
+};
+const handleEditPost = async (id) => {
+  try {
+    const post = await getPostById(id);
+
+    document.querySelector("#title").value = post.title;
+    document.querySelector("#body").value = post.body;
+    document.querySelector("#userId").value = post.userId;
+    document.querySelector("#postId").value = post.id;
+  } catch (e) {}
+};
+const updateCurrentPost = async () => {
+  const userId = document.querySelector("#userId").value;
+  const title = document.querySelector("#title").value;
+  const body = document.querySelector("#body").value;
+  const postId = document.querySelector("#postId").value;
+  const postData = {
+    id: parseInt(postId),
+    userId: parseInt(userId),
+    title: title,
+    body: body,
+  };
+  try {
+    await updatePost(parseInt(postId), postData);
+    clearForm();
+    loadPost();
+  } catch (e) {}
+};
+updateFormButton.addEventListener("click", () => {
+  updateCurrentPost();
 });
-describe("weekFn", () => {
-  it("1-7 для чисел повертає правильну назву дня тижня", () => {
-    expect(weekFn(1)).toBe("Понеділок");
-    expect(weekFn(2)).toBe("Вівторок");
-    expect(weekFn(3)).toBe("Середа");
-    expect(weekFn(4)).toBe("Четвер");
-    expect(weekFn(5)).toBe("П'ятниця");
-    expect(weekFn(6)).toBe("Субота");
-    expect(weekFn(7)).toBe("Неділя");
-  });
-  it("Повертає null для не правильних  значень", () => {
-    expect(weekFn(0)).toBe(null);
-    expect(weekFn(8)).toBe(null);
-    expect(weekFn(9)).toBe(null);
-    expect(weekFn(1.5)).toBe(null);
-    expect(weekFn("2")).toBe(null);
-    expect(weekFn(null)).toBe(null);
-    expect(weekFn(undefined)).toBe(null);
-  });
+
+clearFormButton.addEventListener("click", () => {
+  clearForm();
+});
+
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const userId = document.querySelector("#userId").value;
+  const title = document.querySelector("#title").value;
+  const body = document.querySelector("#body").value;
+
+  const postData = {
+    userId: parseInt(userId),
+    title: title,
+    body: body,
+  };
+
+  try {
+    const postContainer = document.querySelector("#postsContainer");
+    const res = await createPost(postData);
+
+    const newPostHTML = `
+    <div class="post-item">
+    <div class="meta">ID: ${res.id} | User: ${res.userId}</div>
+    <h3>${res.title}</h3>
+    <p>${res.body}</p>
+    <div>
+     <button class="secondary" data-action="edit" data-post-id="${res.id}">Edit</button>
+     <button class="destructive" data-action="delete" data-post-id="${res.id}">Delete</button>
+    </div>
+    </div>
+    `;
+    postContainer.insertAdjacentHTML("afterbegin", newPostHTML);
+    clearForm();
+  } catch (e) {
+    console.error(e);
+  }
+});
+
+postContainer.addEventListener("click", async (event) => {
+  const postId = event.target.dataset.postId || null;
+  const action = event.target.dataset.action || null;
+  if (postId && action === "delete") {
+    handleDelete(postId);
+    return;
+  }
+  if (postId && action === "edit") {
+    handleEditPost(postId);
+    return;
+  }
+});
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadPost();
 });
